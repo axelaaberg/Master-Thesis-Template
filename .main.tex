@@ -1,0 +1,185 @@
+% --- This master thesis template was ---
+% --- created by Axel Åberg, I-21 ---
+
+\documentclass[11pt]{article}
+
+% --- Typsnitt ---
+\usepackage{newtxtext}  % Times New Roman-liknande
+\usepackage{helvet}     % Arial-liknande (för rubriker)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% --- Layout ---
+%\usepackage[       
+%  left=40mm,
+%  right=40mm,
+%  top=41mm,
+%  bottom=51mm,
+%  footskip=41mm
+%]{geometry}            % denna bör användas vid tryckning. Ersätter rad nedan
+\usepackage[margin=2.5cm]{geometry} 
+\usepackage{setspace}
+\singlespacing  % Enkel radavstånd
+%\usepackage{parskip}
+\setstretch{1.0}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+% --- Rubrikformat ---
+\usepackage{titlesec}
+% Heading 1: bold Arial 14 point all caps, space above 24 pt and 12 pt below
+\titleformat{\section}
+  {\bfseries\fontfamily{phv}\selectfont\fontsize{14pt}{14pt}\selectfont\MakeUppercase}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{24pt}{12pt}
+
+% Heading 2: bold Arial 14 pt, space above 12pt and below 6pt
+\titleformat{\subsection}
+  {\bfseries\fontfamily{phv}\selectfont\fontsize{14pt}{14pt}\selectfont}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+
+% Heading 3: Arial 12 point bold, space above 12pt and below 0pt
+\titleformat{\subsubsection}
+  {\bfseries\fontfamily{phv}\selectfont\fontsize{12pt}{12pt}\selectfont}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{12pt}{0pt}
+
+% Paragraph: Smaller subtitle not contributing list of content
+\usepackage{titlesec}
+\titleformat{\paragraph}{\normalfont\bfseries}{}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{1.5ex}{0ex}
+
+% --- Figurer och tabeller ---
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[figure]{font=it,labelfont=bf,labelsep=period} % Figurtext under, kursiv
+\captionsetup[table]{font=it,labelfont=bf,labelsep=period,position=above} % Tabelltext ovanför
+
+% --- Övriga ---
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{tabularx, booktabs, multirow, multicol}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{graphicx} % in the preamble
+\usepackage[table]{xcolor}
+\usepackage{tikz} %
+
+
+% --- Referenser ---
+%\usepackage[style=authoryear, giveninits=true, backend=biber]{biblatex}
+\usepackage[style=apa, backend=biber]{biblatex} 
+\renewcommand*{\nameyeardelim}{\addspace}
+\addbibresource{.Bibliography.bib}
+\setlength{\bibitemsep}{1em}
+
+% --- Sidhuvud och sidfot ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\rhead{}
+\lhead{}
+\cfoot{\thepage}
+
+% --- Nummerformatering ---
+\usepackage{siunitx}        % Set up for \num{}
+\sisetup{
+  group-separator = {\,},   % Thousands seperator: space
+  group-minimum-digits = 4,
+  output-decimal-marker = {.}   % Decimal seperator: period
+}                                  
+
+% --- Global variables ---
+\newcommand{\varImgWidth}{0.82} % image width
+
+
+% --- START DOKUMENT ---
+
+\begin{document}
+
+% --- Titelsida ---
+\begin{titlepage}
+    
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      anchor=north west,
+      xshift=2.4cm,
+      yshift=-2.5cm,
+      opacity=1
+    ] at (current page.north west)
+    {\includegraphics[width=6.5cm]{Logos/LTH Colour.png}};
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      anchor=south east,
+      xshift=3.75cm,
+      yshift=-8.94cm,
+      opacity=0.38
+    ] at (current page.south east)
+    {\includegraphics[width=14.2cm]{Logos/LU Colour.png}};
+    \end{tikzpicture}
+
+    \centering
+    \vspace*{\fill}
+
+    {\Huge \textbf {\color[HTML]{9c6114} Is Life Linear?} \par} % Extremt temporär titel
+    {\Large \textbf {\color[HTML]{9c6114} Allocation Optimization Using Mixed-Integer Linear Programming} \par}  
+    \vspace{-0.2cm}
+    {\color[HTML]{9c6114}\rule{0.98\textwidth}{0.8pt}}
+    {\large \textbf {\color[HTML]{9c6114} Department of Industrial and Mechanical Sciences | Division of Production Management} \par}    
+
+    \vspace*{\fill}
+
+    \begin{flushleft}
+    \raggedright
+    {\large \textbf{Authors:} Axel Åberg \& Clara Brodin \par}
+    {\large \textbf{Supervisor:} Danja Sonntag \par}
+    {\large \textbf{Examinator:} Johan Marklund \par}
+    {\large M.Sc. Industrial Engineering and Management\par} %M.Sc.Eng?
+    {\large Degree Project in Production Management (MIOM05) \par} %FULT som stryk med kurskod men men
+    \vspace{0.5 cm}
+    
+    {\large {Lund, 2X$^{\text{th}}$ of May 2026} \par}
+    \end{flushleft}
+    
+\end{titlepage}
+
+
+
+% --- Innehållsdelar ---
+\pagenumbering{Roman}
+\setcounter{page}{2}
+\input{01. Abstract}
+\newpage
+\input{02. Preface}
+\newpage
+\tableofcontents
+\newpage
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{03. Introduction}
+\newpage
+\input{04. Methodology}
+\newpage
+\input{05. Title 2}
+\newpage
+\input{10. Conclusion}
+\newpage
+
+% --- Referenser ---
+\addcontentsline{toc}{section}{References}
+\printbibliography
+\end{document}
+-
+
+
+%Blanksidor
+%Enligt konvention börjar alltid nya avsnitt på en högersida (udda sidnummer). För att lösa detta vid dubbelsidig utskrift måste en blanksida infogas före avsnittets början om föregående avsnitt slutar på en högersida/udda sida. Glöm inte att det kan behövas en blanksida efter innehållsförteckningen.
+%Sidnummer skrivs inte ut på blanksidor.
