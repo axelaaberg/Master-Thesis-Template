@@ -1,5 +1,7 @@
-% --- This master thesis template was ---
-% --- created by Axel Åberg, I-21 ---
+% ---------------------------------------
+% --- This Master Thesis template was ---
+% --- created by Axel Åberg, I-21 -------
+% ---------------------------------------
 
 \documentclass[11pt]{article}
 
@@ -16,17 +18,17 @@
 %  top=41mm,
 %  bottom=51mm,
 %  footskip=41mm
-%]{geometry}            % denna bör användas vid tryckning. Ersätter rad nedan
-\usepackage[margin=2.5cm]{geometry} 
+%]{geometry} % denna marginal bör användas vid tryckning. Ersätter rad nedan
+\usepackage[margin=2.5cm]{geometry} % marginal vid publicering
 \usepackage{setspace}
 \singlespacing  % Enkel radavstånd
-%\usepackage{parskip}
 \setstretch{1.0}
 \setlength{\parskip}{6pt}
 \setlength{\parindent}{0pt}
 
 % --- Rubrikformat ---
 \usepackage{titlesec}
+
 % Heading 1: bold Arial 14 point all caps, space above 24 pt and 12 pt below
 \titleformat{\section}
   {\bfseries\fontfamily{phv}\selectfont\fontsize{14pt}{14pt}\selectfont\MakeUppercase}
@@ -54,7 +56,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \captionsetup[figure]{font=it,labelfont=bf,labelsep=period} % Figurtext under, kursiv
-\captionsetup[table]{font=it,labelfont=bf,labelsep=period,position=above} % Tabelltext ovanför
+\captionsetup[table]{font=it,labelfont=bf,labelsep=period,position=above} % Tabelltext ovanför, kursiv
 
 % --- Övriga ---
 \usepackage{pgfplots}
@@ -67,11 +69,9 @@
 \usepackage{multirow}
 \usepackage{graphicx} % in the preamble
 \usepackage[table]{xcolor}
-\usepackage{tikz} %
-
+\usepackage{tikz} 
 
 % --- Referenser ---
-%\usepackage[style=authoryear, giveninits=true, backend=biber]{biblatex}
 \usepackage[style=apa, backend=biber]{biblatex} 
 \renewcommand*{\nameyeardelim}{\addspace}
 \addbibresource{.Bibliography.bib}
@@ -87,11 +87,11 @@
 \cfoot{\thepage}
 
 % --- Nummerformatering ---
-\usepackage{siunitx}        % Set up for \num{}
+\usepackage{siunitx} % Set up for \num{}
 \sisetup{
-  group-separator = {\,},   % Thousands seperator: space
-  group-minimum-digits = 4,
-  output-decimal-marker = {.}   % Decimal seperator: period
+  group-separator = {\,}, % Thousands seperator: space
+  group-minimum-digits = 4, 
+  output-decimal-marker = {.} % Decimal seperator: period
 }                                  
 
 % --- Global variables ---
@@ -99,7 +99,6 @@
 
 
 % --- START DOKUMENT ---
-
 \begin{document}
 
 % --- Titelsida ---
@@ -128,7 +127,7 @@
     \centering
     \vspace*{\fill}
 
-    {\Huge \textbf {\color[HTML]{9c6114} Is Life Linear?} \par} % Extremt temporär titel
+    {\Huge \textbf {\color[HTML]{9c6114} Linear Until Proven Otherwise} \par} % Extremt temporär titel
     {\Large \textbf {\color[HTML]{9c6114} Allocation Optimization Using Mixed-Integer Linear Programming} \par}  
     \vspace{-0.2cm}
     {\color[HTML]{9c6114}\rule{0.98\textwidth}{0.8pt}}
@@ -150,8 +149,6 @@
     
 \end{titlepage}
 
-
-
 % --- Innehållsdelar ---
 \pagenumbering{Roman}
 \setcounter{page}{2}
@@ -168,7 +165,7 @@
 \newpage
 \input{04. Methodology}
 \newpage
-\input{05. Title 2}
+\input{05. Theory}
 \newpage
 \input{10. Conclusion}
 \newpage
@@ -177,7 +174,6 @@
 \addcontentsline{toc}{section}{References}
 \printbibliography
 \end{document}
--
 
 
 %Blanksidor
